@@ -1,0 +1,94 @@
+:root {
+  --vert: #4CAF50;
+  --vert-foncé: #388E3C;
+  --vert-clair: #A5D6A7;
+  --gris-foncé: #2c3e50;
+  --gris-clair: #f4f4f4;
+  --blanc: #ffffff;
+  --police-titre: 'Segoe UI', sans-serif;
+  --police-corps: 'Arial', sans-serif;
+  --rayon-bord: 8px;
+}
+
+body {
+  margin: 0;
+  font-family: var(--police-corps);
+  background-color: var(--gris-clair);
+  color: #333;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--police-titre);
+  color: var(--gris-foncé);
+}
+
+nav {
+  background-color: var(--vert);
+  color: var(--blanc);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 10;
+}
+
+.logo {
+  color: var(--blanc);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.burger span {
+  width: 25px;
+  height: 3px;
+  background: var(--blanc);
+  border-radius: 2px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--blanc);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+  .burger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--vert);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 10px 20px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 10px 0;
+    width: 100%;
+  }
+}
